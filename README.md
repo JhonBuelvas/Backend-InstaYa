@@ -1,0 +1,1 @@
+Api back-end de la aplicación web para la recolección de paquetes (INSTAYA), en base Node.js, Express.js y con conexión a MongoDB Atlas. 

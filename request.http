@@ -3,15 +3,15 @@ POST http://localhost:9000/api/users HTTP/1.1
 Content-Type: application/json
 
 {
-"name": "Fernando",
-"Middlename": "David",
-"Lastname": "Martinez",
-"secondlastname": "Martinez",
-"ID": "10024690047",
-"Date": "12/07/1999",
-"phone": "3057950433",
+"name": "Jhon",
+"Middlename": "Alex",
+"Lastname": "Buelvas",
+"secondlastname": "Bertel",
+"ID": "10024540024",
+"Date": "12/07/2015",
+"phone": "3057950473",
 "genero": "Masculino",
-"email":"Fernando04@gmail.com",
+"email":"JhonAlex04@gmail.com",
 "Password":"2345rty",
 "state":"Bolivar",
 "city":"Cartagena",
