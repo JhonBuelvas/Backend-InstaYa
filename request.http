@@ -1,0 +1,116 @@
+###
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+"name": "Fernando",
+"Middlename": "David",
+"Lastname": "Martinez",
+"secondlastname": "Martinez",
+"ID": "10024690047",
+"Date": "12/07/1999",
+"phone": "3057950433",
+"genero": "Masculino",
+"email":"Fernando04@gmail.com",
+"Password":"2345rty",
+"state":"Bolivar",
+"city":"Cartagena",
+"zip":"457892",
+"address":"Kra 15a N°5-130",
+"neighborhood":"Nuevo valle"
+}
+
+###
+GET http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:9000/api/users/63858d84eddb076d06726712 HTTP/1.1
+Content-Type: application/json
+
+###
+PUT http://localhost:9000/api/users/63865fb7ec1e6316b3602505 HTTP/1.1
+Content-Type: application/json
+
+{
+"name": "Maria",
+"Middlename": "Liney",
+"Lastname": "Martinez",
+"secondlastname": "Bertel",
+"ID": "12450254",
+"Date": "12/12/2022",
+"phone": "3254891",
+"genero": "Femenino",
+"email":"mariaF@gmail.com",
+"Password":"214423e",
+"state":"Bolivar",
+"city":"Cartagena",
+"zip":"457892",
+"address":"Kra 14a N°5-130",
+"neighborhood":"Nuevo valle"
+}
+
+###
+DELETE http://localhost:9000/api/users/6385814c2bbfafa64f58587b HTTP/1.1
+Content-Type: application/json
+
+###
+POST http://localhost:9000/api/createorder HTTP/1.1
+Content-Type: application/json
+
+{
+"Fromaddress": "Kra 14a N°5-130",
+"cityorigin": "Barranquilla",
+"sendername":"Maria Fernanda Lopez",
+"senderID": "12345789",
+"senderphone": "3045689710",
+"Deliveryaddress": "Kra 25 N°50-130",
+"Deliverycity": "Cartagena",
+"recipientname":"Manuel Ortega",
+"recipientID": "1234567890",
+"recipientphone": "3045698710",
+"Date": "01/12/2022",
+"time":"01/12/2023",
+"high":"20",
+"width": "20",
+"lenght": "20",
+"weight": "10",
+"estado": "Guardado"
+}
+
+###
+GET http://localhost:9000/api/createorder HTTP/1.1
+Content-Type: application/json
+
+
+###
+GET http://localhost:9000/api/createorder/63863375e83bc0c3eb3effc3 HTTP/1.1
+Content-Type: application/json
+
+###
+PUT http://localhost:9000/api/createorder/6386336ae83bc0c3eb3effbf HTTP/1.1
+Content-Type: application/json
+
+{
+"Fromaddress": "Kra 14a N°5-130",
+"cityorigin": "Barranquilla",
+"sendername":"Manuela enrrique",
+"senderID": "12345789",
+"senderphone": "3045689710",
+"Deliveryaddress": "Kra 25 N°50-130",
+"Deliverycity": "Cartagena",
+"recipientname":"Manuel Ortega",
+"recipientID": "1234567890",
+"recipientphone": "3045698710",
+"Date": "01/12/2022",
+"time":"01/12/2023",
+"high":"20",
+"width": "20",
+"lenght": "20",
+"weight": "10",
+"estado": "Guardado"
+}
+
+###
+DELETE http://localhost:9000/api/createorder/6386336be83bc0c3eb3effc1 HTTP/1.1
+Content-Type: application/json
