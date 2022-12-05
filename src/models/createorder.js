@@ -45,7 +45,7 @@ const createorderSchema = mongoose.Schema ({
         require: true
     },
     time:{
-        type: Date,
+        type: String,
         require: true
     },
     high: {
@@ -69,5 +69,5 @@ const createorderSchema = mongoose.Schema ({
         require:true
     }
 
-})
+}, { timestamps: true });
 module.exports= mongoose.model('createorder',createorderSchema);
