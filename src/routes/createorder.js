@@ -1,9 +1,10 @@
 const express = require ('express');
 const createorderSchema = require ('../models/createorder')
 const router = express.Router();
+const cors = require('cors');
 
 //Ruta de creacion de usuario
-router.post('/createorder', (req, res) =>{
+router.post('/createorder', cors(),(req, res) =>{
     const createorder = createorderSchema (req.body);
     createorder
     .save()
@@ -12,14 +13,14 @@ router.post('/createorder', (req, res) =>{
 });
 
 //Ruta para obtener usuarios
-router.get("/createorder", (req, res)=>{
+router.get("/createorder",cors(), (req, res)=>{
     createorderSchema
-    .find()
+    .find({ userId: req.query.userId })
     .then((data)=>res.json(data))
-    .catch((error)=>res.json({message: error}));
+    .catch((error)=>res.json({message: error }));
 });
 //Ruta para obtener un usuarios
-router.get("/createorder/:id", (req, res)=>{
+router.get("/createorder/:id",cors(), (req, res)=>{
     const {id} = req.params;
     createorderSchema
     .findById(id)
@@ -28,7 +29,7 @@ router.get("/createorder/:id", (req, res)=>{
 });
 
 //Ruta para actualizar usuario
-router.put("/createorder/:id", (req, res)=>{
+router.put("/createorder/:id",cors(), (req, res)=>{
     const {id} = req.params;
     const { Fromaddress, cityorigin, sendername, senderID, senderphone, Deliveryaddress, Deliverycity, recipientname, recipientID, recipientphone, Date, time, high, width, lenght, weight, estado,} = req.body;
     createorderSchema
@@ -37,7 +38,7 @@ router.put("/createorder/:id", (req, res)=>{
     .catch((error)=>res.json({message: error}));
 });
 //Ruta para eliminar un usuarios
-router.delete("/createorder/:id", (req, res)=>{
+router.delete("/createorder/:id",cors(), (req, res)=>{
     const {id} = req.params;
     createorderSchema
     .remove({_id: id})

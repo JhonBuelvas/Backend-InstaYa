@@ -51,7 +51,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:9000/api/users/6385814c2bbfafa64f58587b HTTP/1.1
+DELETE http://localhost:9000/api/users/6388008f686ffeaf3d0e07e8 HTTP/1.1
 Content-Type: application/json
 
 ###
@@ -75,7 +75,8 @@ Content-Type: application/json
 "width": "20",
 "lenght": "20",
 "weight": "10",
-"estado": "Guardado"
+"estado": "Guardado",
+"userId": "638eb0112f08df0cf6a91198"
 }
 
 ###
@@ -112,5 +113,5 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:9000/api/createorder/6386336be83bc0c3eb3effc1 HTTP/1.1
+DELETE http://localhost:9000/api/createorder/6386dbaeb9031f5bb07bd2b1 HTTP/1.1
 Content-Type: application/json

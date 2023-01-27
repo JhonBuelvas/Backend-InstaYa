@@ -2,9 +2,10 @@ const express = require ('express');
 const userSchema = require ('../models/user')
 const router = express.Router();
 const bcrypt = require ('bcrypt');
+const cors = require('cors');
 
 //Ruta de creacion de usuario
-router.post('/users', (req, res) =>{
+router.post('/users', cors(), (req, res) =>{
     const {name, Middlename, Lastname, secondlastname, ID, Date, phone, genero, email, Password, state, city, zip, address, neighborhood,} = req.body;
     
     userSchema.findOne({email}).then((userRegister) =>{
@@ -44,14 +45,14 @@ router.post('/users', (req, res) =>{
 });
 
 //Ruta para obtener usuarios
-router.get("/users", (req, res)=>{
+router.get("/users",cors(), (req, res)=>{
     userSchema
     .find()
     .then((data)=>res.json(data))
     .catch((error)=>res.json({message: error}));
 });
 //Ruta para obtener un usuarios
-router.get("/users/:id", (req, res)=>{
+router.get("/users/:id",cors(), (req, res)=>{
     const {id} = req.params;
     userSchema
     .findById(id)
@@ -60,7 +61,7 @@ router.get("/users/:id", (req, res)=>{
 });
 
 //Ruta para actualizar usuario
-router.put("/users/:id", (req, res)=>{
+router.put("/users/:id",cors(), (req, res)=>{
     const {id} = req.params;
     const {name, Middlename, Lastname, secondlastname, ID, Date, phone, genero, email, Password, state, city, zip, address, neighborhood,} = req.body;
     userSchema
@@ -69,7 +70,7 @@ router.put("/users/:id", (req, res)=>{
     .catch((error)=>res.json({message: error}));
 });
 //Ruta para eliminar un usuarios
-router.delete("/users/:id", (req, res)=>{
+router.delete("/users/:id",cors(), (req, res)=>{
     const {id} = req.params;
     userSchema
     .remove({_id: id})

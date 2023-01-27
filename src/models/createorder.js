@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const createorderSchema = mongoose.Schema ({
+const createorderSchema = mongoose.Schema
+let orderSchema = new createorderSchema({
     Fromaddress: {
         type:String,
         require:true
@@ -67,7 +68,10 @@ const createorderSchema = mongoose.Schema ({
     estado:{
         type: String,
         require:true
+    },
+    userId: {
+        type: createorderSchema.Types.ObjectId, ref: 'users'
     }
 
 }, { timestamps: true });
-module.exports= mongoose.model('createorder',createorderSchema);
+module.exports= mongoose.model('createorder',orderSchema);
